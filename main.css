@@ -1,0 +1,240 @@
+:root {
+	font-size: 16px;
+	--main-bg-color: #fff;
+	--primary-bg: #f7f6f5;
+	--secondary-bg: #e9e6e5;
+	--cta-color: #bfabab;
+	--feature-color: #9f938b;
+	--text-color: #4d4d4d;
+	--text-size: 0.875rem;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Lato;
+	color: var(--text-color);
+}
+a {
+	color: unset;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 1.75rem;
+	font-weight: 400;
+	margin-top: 2rem;
+}
+p {
+	font-size: 1rem;
+	font-weight: 300;
+	letter-spacing: 0.05em;
+	line-height: 160%;
+}
+button {
+	font-size: 1.125rem;
+	border: unset;
+}
+button:hover {
+	cursor: pointer;
+}
+hr {
+	margin: 1rem 0 2rem 0;
+}
+img {
+	user-drag: none;
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+}
+
+/* hero-section  */
+.hero {
+	background: var(--primary-bg);
+}
+
+/* Main image  */
+.product_image {
+	background: var(--secondary-bg);
+}
+.product_image img {
+	width: 100%;
+	object-fit: contain;
+	max-height: 80vh;
+	align-self: center;
+}
+
+/* Product Card */
+.product_content {
+	width: 90%;
+	margin: 0 auto;
+}
+/* breadcrumbs */
+.breadcrumbs {
+	margin: 1rem auto 0 auto;
+}
+.breadcrumbs span:after {
+	content: " /";
+}
+.breadcrumbs span:last-child:after {
+	content: "";
+}
+.breadcrumbs a {
+	font-size: 0.75rem;
+	font-weight: 300;
+	letter-spacing: 0.05em;
+	color: var(--text-color);
+	text-decoration: none;
+}
+.breadcrumbs a:hover {
+	text-decoration: underline;
+}
+/* product info */
+.product_subtitle {
+	font-size: 0.875rem;
+	text-transform: uppercase;
+	font-weight: 300;
+	margin-top: 0.75rem;
+}
+.product_discription {
+	margin-bottom: 2.5rem;
+}
+
+/* feature box */
+.product_features {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.feature {
+	display: flex;
+	align-items: center;
+	color: var(--feature-color);
+	margin-bottom: 1rem;
+}
+.feature span {
+	margin-left: 0.5rem;
+	font-weight: 500;
+	font-size: var(--text-size);
+}
+
+.primary_button {
+	width: 100%;
+	min-height: 3.125rem;
+	margin-bottom: 2rem;
+	background: var(--cta-color);
+	color: var(--text-color);
+	text-transform: uppercase;
+	padding: 0.5rem 0;
+	align-items: center;
+	text-align: center;
+}
+
+/* Carousel */
+.section_title {
+	margin-top: 3rem;
+	font-weight: 400;
+	text-align: center;
+	text-transform: uppercase;
+}
+.reccomended_products {
+	overflow-y: hidden;
+	margin: 2rem 0 2rem 0;
+}
+
+.product_carousel {
+	display: flex;
+	overflow: visible;
+	max-width: 90%;
+	margin: 0 auto;
+	margin-bottom: 2.5rem;
+}
+.product_carousel .product_card:first-of-type {
+	margin-left: 0px;
+}
+.product_carousel .product_card:last-of-type {
+	padding-right: 2.5rem;
+}
+.product_carousel .product_card {
+	margin-left: 2.5rem;
+	width: 280px;
+}
+.product_card h3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+.product_card h4 {
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+.product_carousel .product_card img {
+	width: inherit;
+	user-select: none;
+	aspect-ratio: 1/1.25;
+	object-fit: cover;
+}
+.reccomended_products::-webkit-scrollbar {
+	-webkit-appearance: none;
+	height: 5px;
+	width: 3px;
+	background: rgba(0, 0, 0, 0.15);
+}
+
+.reccomended_products::-webkit-scrollbar-thumb {
+	border-radius: 1px;
+	background-color: black;
+}
+
+/* Desktop */
+@media only screen and (min-width: 768px) {
+	.hero {
+		display: flex;
+	}
+	.product_image {
+		flex-grow: 2;
+		display: flex;
+	}
+	.product_content {
+		flex-grow: 1;
+		max-width: 510px;
+		display: flex;
+		flex-direction: column;
+	}
+	.breadcrumbs {
+		max-width: 410px;
+		width: 90%;
+		margin: 1.5rem auto 0 auto;
+	}
+	.product_info {
+		max-width: 410px;
+		margin: auto;
+		width: 90%;
+	}
+	.product_carousel .product_card {
+		margin-left: 2.5rem;
+		width: 360px;
+		transition: 0.3s ease;
+	}
+	.product_carousel .product_card:hover {
+		transform: scale(1.05);
+		transition: 0.3s ease;
+		z-index: 10;
+	}
+	.product_carousel .product_card img {
+		transition: 0.6s ease;
+	}
+	.product_carousel .product_card:hover img {
+		box-shadow: 15px 15px 30px #00000021;
+		transition: 0.3s ease;
+	}
+}
